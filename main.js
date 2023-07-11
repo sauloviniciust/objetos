@@ -11,21 +11,6 @@ const estado = prompt('digite o nome do seu estado');
 const email = prompt('digite o seu email');
 const telefone = Number(prompt('digite o numero de telefone'));
 
-// atribuição de valores
-
-const usuario1 = new pessoa({
-    nome,
-    sobrenome,
-    idade,
-    rua,
-    casa,
-    bairro,
-    cidade,
-    estado,
-    email,
-    telefone,
-});
-
 // classe construtora
 
 class pessoa {
@@ -42,7 +27,7 @@ class pessoa {
         this.telefone = info.telefone;
     }
     falar() {
-        console.log('Olá ' + this.nome + ', o seu cadastro foi realizado com sucesso!!!')
+        console.log('Olá ' + this.nome.toUpperCase() + ', o seu cadastro foi realizado com sucesso!!!')
     }
 
     verificaTelefone() {
@@ -52,7 +37,25 @@ class pessoa {
             console.log('telefone não é valido')
         }
     }
+ 
 }
+
+
+// atribuição de valores
+
+const usuario1 = new pessoa({
+    nome,
+    sobrenome,
+    idade,
+    rua,
+    casa,
+    bairro,
+    cidade,
+    estado,
+    email,
+    telefone,
+});
+
 
 console.log(usuario1);
 console.log(usuario1.falar());
